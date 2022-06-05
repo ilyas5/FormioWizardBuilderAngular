@@ -1,3 +1,3 @@
 # Formio Wizard Builder Angular
 
-![Wizard Builder](http://url/to/img.png)
+![Wizard Builder](https://github.com/ilyas5/FormioWizardBuilderAngular/blob/main/src/assets/wb.png)
