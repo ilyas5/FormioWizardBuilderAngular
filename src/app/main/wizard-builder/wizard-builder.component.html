@@ -1,0 +1,48 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3 class="text-center text-muted">
+                            <select class="form-control" id="form-select" [(ngModel)]="formType" (change)="formTypeChanged()"
+                                style="display: inline-block; width: 150px;">
+                                <option value="form" selected>Form</option>
+                                <option value="wizard">Wizard</option>
+                                <option value="pdf">PDF</option>
+                            </select>
+            </h3>
+            <div class="card bg-light" style="height:700px;overflow-y:scroll;">
+                <form-builder id="fbuilder" [form]="builder" (change)="onForm($event)"></form-builder>
+                <!--<div id="fbuilder" (change)="onForm($event)"></div>-->
+            </div>         
+        </div>
+        <div class="col-sm-4">
+            <h3 class="text-center text-muted">JSON Schema</h3>
+            <div class="card">
+                <div class="">
+                    <div class=" bg-light jsonviewer" style="height:700px;overflow-y:scroll;">
+                       <pre id="json"></pre>
+                    </div>
+                </div>
+           
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <h3 class="text-center text-muted">Form Render</h3>
+            <!--<div class="card card-body bg-light">
+<formio [form]="formRender"></formio>
+</div>-->
+            <div id="formio" class="card card-body bg-light"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <h3 class="text-center text-muted">Submission JSON</h3>
+            <div class="card card-body bg-light jsonviewer">
+                <pre id="subjson"></pre>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
