@@ -1,0 +1,48 @@
+<div class="row mt-2">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <select (change)="onFormTypeChange($event)" class="form-control" id="form-select">
+            <option value="wizard">Wizard</option>
+            <option value="form">Form</option>
+            <option value="pdf">PDF</option>
+        </select>
+    </div>
+
+</div>
+
+
+<div class="row mt-2">
+
+    <div class="col-md-12">
+        <form-builder [form]="form" (change)="onChange($event)"></form-builder>
+    </div>
+    <div class="card mt-2">
+        <div class="card-header">
+            As JSON Schema
+            <div class="float-end">
+                <button (click)="copySchema()" class="btn btn-sm btn-primary">copy</button>
+            </div>
+        </div>
+        <div class="card-body" style="height:20em;overflow: scroll;">
+            <div class="well jsonviewer">
+                <pre id="json">
+                    <code class="language-json" #json>                    
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card mt-1">
+        <div class="card-header">
+            As Rendered Form
+        </div>
+        <div class="card-body">
+            <div class="well jsonviewer">
+                <formio [form]="form" [refresh]="refreshForm"></formio>
+            </div>
+        </div>
+    </div>
+
+</div>
